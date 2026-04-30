@@ -5,3 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 require("./monkey-patch-crypto.js")
+
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                options: { transpileOnly: true },
+                exclude: /node_modules/,
+            },
+        ],
+    },
+}

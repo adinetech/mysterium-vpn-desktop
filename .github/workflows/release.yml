@@ -43,3 +43,4 @@ jobs:
           APPLEID: ${{ secrets.APPLEID }}
           APPLEIDPASS: ${{ secrets.APPLEIDPASS }}
           APPLETEAMID: ${{ secrets.APPLETEAMID }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false

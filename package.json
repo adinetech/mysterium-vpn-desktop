@@ -2,7 +2,7 @@
   "name": "mysterium-vpn-desktop",
   "productName": "MysteriumDark",
   "description": "Desktop VPN client (legacy) for Mysterium Network",
-  "version": "0.0.0-snapshot",
+  "version": "10.18.0",
   "main": "index.js",
   "author": {
     "name": "Mysterium Network",
@@ -16,7 +16,9 @@
     "clean": "shx rm -rf dist",
     "build": "electron-webpack",
     "bundle": "yarn build && electron-builder",
-    "bundle-dev": "yarn build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder"
+    "bundle-dev": "yarn build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
+    "upgrade-node": "node scripts/upgrade-node-binary.js",
+    "preinstall": "cd vendor/node-js && yarn install && node lib/postinstall.js"
   },
   "engines": {
     "node": ">=16"
@@ -26,7 +28,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@mysteriumnetwork/node": "1.29.2",
+    "@mysteriumnetwork/node": "file:./vendor/node-js",
     "@mysteriumnetwork/terms": "0.0.50",
     "@sentry/electron": "^4.0.0",
     "@use-it/interval": "^1.0.0",
@@ -102,11 +104,14 @@
     "prettier": "^2.7.1",
     "shx": "^0.3.3",
     "typescript": "^4.6.4",
+    "ts-loader": "^8.4.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.46.0"
   },
   "resolutions": {
-    "@types/react": "^18.0.14"
+    "@types/react": "^18.0.14",
+    "ts-loader": "^8.4.0",
+    "react-hook-form": "7.31.1"
   },
   "analyticsUrl": "https://analytics.mysterium.network",
   "intercomAppId": "sjkeehf4",

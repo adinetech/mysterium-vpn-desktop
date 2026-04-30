@@ -6,6 +6,16 @@
  */
 module.exports = {
     externals: ["react", "react-dom"],
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                options: { transpileOnly: true },
+                exclude: /node_modules/,
+            },
+        ],
+    },
 }
 
 require("./monkey-patch-crypto.js")
