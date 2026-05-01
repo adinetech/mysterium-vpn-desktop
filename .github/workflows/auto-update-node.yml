@@ -38,3 +38,7 @@ jobs:
           branch: "auto-update-node"
           base: "master"
           delete-branch: true
+          add-paths: |
+            vendor/node-js/package.json
+            vendor/node-js/yarn.lock
+            yarn.lock

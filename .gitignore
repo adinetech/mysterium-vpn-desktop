@@ -4,3 +4,4 @@ static/bin/
 *.log
 .idea
 .electron-symbols
+vendor/node-js/bin/
