@@ -1,6 +1,6 @@
 {
   "name": "@mysteriumnetwork/node",
-  "version": "1.38.1",
+  "version": "1.39.7",
   "description": "Mysterium Network node",
   "keywords": [
     "mysterium",
